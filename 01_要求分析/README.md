@@ -22,7 +22,7 @@ Stakeholdersの要求を分析・定義するプロセス。
 ```puml
 @startuml
 skinparam defaultTextAlignment center
-:管理者:
+actor 管理者
 package {
   card ユーザ <<集約>> [
     ユーザ
@@ -84,6 +84,7 @@ package {
   - 基本コースと代替コースを記述する。
 ### パッケージ図
 ```puml
+@startuml
 :管理者: as a
 package 登録 {
   usecase "ユーザを登録する" 
@@ -93,25 +94,31 @@ package 検索 {
 }
 a -- 登録
 a -- 検索
+@enduml
 ```
 ### ユースケース図
 ```puml
+@startuml
 package 登録 {
   :管理者: as a
   usecase "ユーザを登録する" as create
   a --> create
 }
+@enduml
 ```
 ```puml
+@startuml
 package 検索 {
   :管理者: as a
   usecase "ユーザ一覧を表示する" as create
   a --> create
 }
+@enduml
 ```
 ### ユースケース記述
 GUIプロトタイプ
 ```puml
+@startuml
 frame ユーザを登録する {
 card test [
 基本コース: 
@@ -119,9 +126,11 @@ card test [
 代替コース: 
 ]
 }
+@enduml
 ```
 
 ```puml
+@startuml
 frame ユーザ一覧を閲覧する {
 card test [
 基本コース: 
@@ -129,6 +138,7 @@ card test [
 代替コース: 
 ]
 }
+@enduml
 ```
 
 
